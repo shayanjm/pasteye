@@ -69,7 +69,7 @@ DELETE /api/users {apikey: (apikey), users: [{username: (username)}, {username: 
 
 DELETE /api/users {apikey: (apikey), users: [{id: (id)}, {id: (id2)}]} --> Deletes a set of users via ID (ADMIN)
 
-## TO DO
+## TO DO BEFORE RELEASE
 
 + Clean up repo
 
@@ -77,4 +77,3 @@ DELETE /api/users {apikey: (apikey), users: [{id: (id)}, {id: (id2)}]} --> Delet
 
 + License
 
-+ 
