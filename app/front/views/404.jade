@@ -1,0 +1,28 @@
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        title 404 Error
+        //build:css({.tmp,app}) styles/404.css
+        link(href='styles/imports.css', rel='stylesheet')
+        link(href='bower_components/bootstrap/dist/css/bootstrap.css', rel='stylesheet')
+        link(href='styles/style.css', rel='stylesheet')
+        //endbuild
+
+
+        //if lt IE 9
+            script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+            script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+    body
+        #wrap
+            .container(style="text-align:center;")
+                p.lead Sorry bro, you 404'd. Apparently there's no resource by that name.
+                br
+                p.lead You might find it helpful to head back to the splash page&nbsp;
+                    a(href='/') here
+
+        script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
+

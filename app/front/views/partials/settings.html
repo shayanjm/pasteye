@@ -1,0 +1,105 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="alert alert-danger" id="deleteFormErrorMessage" ng-show="deleteFormError" >
+            <p> There was an error. Please make sure that you have typed your account username correctly in the box below. </p>
+        </div>
+        <div class="alert alert-danger" id="deleteErrorMessage" ng-show="deleteErrorMessageFlag" >
+            <p> There was an error: {{deleteErrorMessage}} </p>
+        </div>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">WARNING</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you would like to delete your account? <strong>Once this action is completed, it cannot be undone.</strong></p>
+                <br>
+                <p>If you're sure, please enter the username of your account <strong>({{currentUser.username}})</strong> in the box below, and then click 'Delete'</p>
+                <input class="form-control" type="text" id="deleteUsername" placeholder="Please enter your account username here" ng-model="userDeleteData.username">
+                <p>{{userDeleteData}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" ng-click="userDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-header">
+    <h3 >Need to change something? Here are your settings:</h3>
+</div>
+<div class="alert alert-success hide" id="successMessage">
+    <p> Update was successful! </p>
+</div>
+<div class="alert alert-danger hide" id="errorMessage">
+    <p> There was an error: {{errMessage}} </p>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">User Settings</h3>
+    </div>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-10">
+                  <p class="form-control-static">{{currentUser.username}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputUserEmail" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputUserEmail" placeholder="{{currentUser.userEmail}}" ng-model="userUpdateData.userEmail">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputUserPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputUserPassword" placeholder="Password" ng-model="userUpdateData.password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" ng-click="userSettingsUpdate()">Update</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Monitor Settings</h3>
+    </div>
+    <form class="form-horizontal" id= "monitorForm" role="form">
+        <div class="form-group">
+            <label for="ipDensity" class="col-sm-2 control-label">IP Density</label>
+            <div class="col-sm-10">
+                  <input type="number" class="form-control" min=10 id="ipDensity" placeholder="{{currentSettingsRaw.ip}}" ng-model="monitorUpdateData.ip">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="emailDensity" class="col-sm-2 control-label">Email Density</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="emailDensity" min=10 placeholder="{{currentSettingsRaw.email}}" ng-model="monitorUpdateData.email" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="hashDensity" class="col-sm-2 control-label">Hash Density</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="hashDensity" min=10 placeholder="{{currentSettingsRaw.hash}}" ng-model="monitorUpdateData.hash">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" ng-click="monitorSettingsUpdate()">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{userUpdateData}}</h3>
+        <br>
+        <h3 class="panel-title">{{monitorUpdateData}}</h3>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+extends layout
+block content
+    .container.formContainer
+        #errorMessage.alert.alert-danger.hide
+            p  Sorry, there was an error. Please check that you've input a valid e-mail address.
+        #errorMessagePassword.alert.alert-danger.hide
+            p Please verify that your password is the same in both the 'password' and 'confirm password' fields.
+        #successMessage.alert.alert-success.hide
+            p Success! Please check your e-mail for further instructions. If you don't receive an e-mail within the next few minutes, please click &nbsp;
+                a(href='/resendEmail') here&nbsp;
+            | to resend it.
+
+        form(name="signupForm").form-horizontal#signupForm
+            .panel.panel-primary
+                .panel-heading
+                    h3 Account Info
+                .panel-body
+                    .form-group
+                        label(for="username").control-label.col-xs-4.col-md-2 Username
+                        .col-xs-8.col-md-4
+                            input(type="username", name="username", placeholder="Choose a Username" required).form-control#username
+                     .form-group(ng-class="{'has-error': signupForm.userEmail.$invalid}")
+                        label(for="userEmail").control-label.col-xs-4.col-md-2 Email
+                        .col-xs-8.col-md-4
+                            input(type="email", name="userEmail", placeholder="Enter your email" required).form-control#userEmail
+                    .form-group
+                        label(for="password").control-label.col-xs-4.col-md-2 Password
+                        .col-xs-8.col-md-4
+                            input(type="password", name="password", placeholder="Enter a Password" required).form-control#password
+                    .form-group
+                        label(for="passwordVerify").control-label.col-xs-4.col-md-2 Confirm Password
+                        .col-xs-8.col-md-4
+                            input(type="password", name="passwordVerify", placeholder="Enter your password again" required).form-control#passwordVerify
+            .panel.panel-success
+                .panel-heading
+                    h3 Monitor Settings
+                .panel-body
+                    .form-group
+                        label(for="ipDensity").control-label.col-xs-4.col-md-2 IP Monitor Density
+                        .col-xs-8.col-md-2
+                            input(type="number", name="ipDensity", placeholder="Enter a density" min=10 required).form-control#ipDensity
+                    .form-group
+                        label(for="emailDensity").control-label.col-xs-4.col-md-2 Email Monitor Density
+                        .col-xs-8.col-md-2
+                            input(type="number", name="emailDensity", placeholder="Enter a density" min=10 required).form-control#emailDensity
+                    .form-group
+                        label(for="hashDensity").control-label.col-xs-4.col-md-2 Hash Monitor Density
+                        .col-xs-8.col-md-2
+                            input(type="number", name="hashDensity", placeholder="Enter a density" min=10 required).form-control#hashDensity
+
+            button(type="submit" class="btn btn-default").center-block Submit
+        h3
+            | {{signupForm.userEmail.$invalid}}
+block scripts
+    script.
+        var resetHide = function () {
+            $("#errorMessage").addClass("hide");
+            $("#errorMessagePassword").addClass("hide");
+            $("#successMessage").addClass("hide");
+        };
+        $('#signupForm').on('submit', function () {
+            if (!$("#signupForm").checkValidity || $("#signupForm").checkValidity()) {
+                if ($('#password').val() === $('#passwordVerify').val()) {
+                    var data = { username : $('#username').val(), password : $('#password').val(), userEmail : $('#userEmail').val(), ip : $('#ipDensity').val(), email : $('#emailDensity').val(), hash : $('#hashDensity').val()  };
+                    var signupData = { userEmail : $('#userEmail').val() };
+                    $.ajax({
+                        type: "POST",
+                        url: '/api/users',
+                        data: data,
+                        success: function () {
+                            resetHide();
+                            $("#successMessage").removeClass("hide");
+                        },
+                        error: function () {
+                            resetHide();
+                            $("#errorMessage").removeClass("hide");
+                        }
+                    });
+                }
+                else {
+                    $("#errorMessagePassword").removeClass("hide");
+                }
+            }
+        });

@@ -1,0 +1,54 @@
+extends layout
+block content
+    .jumbotron
+        .container(style="padding-top:5%; padding-bottom:5%;")
+            h1.text-center Pasteye
+            p.text-center The solution to a problem that doesn't exist
+            .text-center
+                a(href="/signup", role="button").btn.btn-success.btn-lg Sign Up
+    .container
+        //- Don't show this on smaller mobile devices
+        p.lead.hidden-xs
+            | Pasteye&nbsp;
+            em
+                small (pronounced paste-ee)&nbsp;
+            | is&nbsp;
+            strong
+                | Pastebin Monitoring as a Service
+            | , a pointless side project by&nbsp;
+            a(href='http://www.shayanmohanty.com/') @Shayanjm
+            | .
+            br
+            br
+            | As it turns out, a lot of people paste rather interesting things to Pastebin (i.e:
+            code usernames & passwords
+            | ,
+            code proxy lists
+            | ,
+            code DB dumps
+            | ,
+            code config files
+            | , etc.)
+            | Pasteye will notify you if something "interesting" has been pasted (based on your own specified settings). Currently, only
+            code email
+            | ,
+            code IP address
+            | , and
+            code Hash (SHA1 & MD5)
+            | monitoring is supported, but support for user-specified filters is coming in the near future. You can help build these features (and more!) by contributing to the project.
+        //- Show this on smaller mobile devices
+        p.lead.visible-xs
+            | Pasteye is&nbsp;
+            strong Pastebin Monitoring as a Service
+            | , a pointless side project by&nbsp;
+            a(href='http://www.shayanmohanty.com/') @Shayanjm
+            | .
+            br
+            br
+            | Pasteye will notify you if something "interesting" has been pasted to pastebin (based on your own specified settings). Currently, only
+            code email
+            | ,
+            code IP address
+            | , and
+            code Hash (SHA1 & MD5)
+            | monitoring is supported, but support for user-specified filters is coming in the near future. You can help build these features (and more!) by contributing to the project.

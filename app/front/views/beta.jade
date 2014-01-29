@@ -1,0 +1,23 @@
+extends layout
+block content
+    .jumbotron.beta
+        .container(style="padding-top:20%; padding-bottom:20%;")
+            h1.text-center Welcome to the Beta!
+            .text-center
+                a(href="/signup" role="button" style="margin-top:3%;").btn.btn-success.btn-lg Sign Up
+    .container.marketing
+        .row
+            p.lead(style="text-align:center;")
+                | As a beta user, you will get to deal with all the broken features of this app and wait patiently while they're fixed.
+                br
+                | That's pretty much it.
+        .row
+            p
+                | Current issues (as far as I know):
+                ul
+                    li As it stands right now, this is an MVP. Design is complete shit, everything is duct taped, etc.
+                    li Currently sitting at 5.6k hand written lines of code in approx. 1 1/2 months. I just wanted to get this out the door as quickly as possible.
+                    li Pretty buggy in general. Things will sometimes hang on the UI.
+                    li Needs more love & code refactoring.
+
+

@@ -1,0 +1,15 @@
+module.exports = {
+    host: 'example.com',
+    secretKey: 'YOURKEYHERE',
+    db: {
+        development: {
+    uri: 'postgres://developmentdb@localhost/pasteyedb'
+        },
+        test: {
+            uri: 'postgres://testdb@localhost/pasteyetestdb'
+        },
+        production: {
+            uri: process.env.DATABASE_URL
+        }
+    }
+};

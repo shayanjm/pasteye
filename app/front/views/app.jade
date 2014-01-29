@@ -1,0 +1,15 @@
+extends layout
+block content
+    .container(ng-controller="AppCtrl")
+        .row.row-offcanvas.row-offcanvas-left(ng-class="{'active': toggleOffCanvas}")
+            .col-xs-6.col-sm-3.sidebar-offcanvas(role="navigation")#sidebar
+                .list-group
+                    a(ui-sref="stats" ui-sref-active="active").list-group-item Stats
+                    a(ui-sref="settings" ui-sref-active="active").list-group-item Settings
+                    //- a(href="#" ui-sref-active="active").list-group-item Feed
+                    //- a(href="#" ui-sref-active="active").list-group-item Log
+            .col-xs-12.col-sm-9
+                p.pull-right.visible-xs
+                    button.btn.btn-primary.btn-xs(type="button", ng-click="toggleOffCanvas = !toggleOffCanvas")
+                        | Toggle Nav
+                <div ui-view> </div>

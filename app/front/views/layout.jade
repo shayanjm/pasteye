@@ -1,0 +1,46 @@
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        title Pasteye
+        //build:css({.tmp,app}) styles/main.css
+        link(href='styles/imports.css', rel='stylesheet')
+        link(href='bower_components/bootstrap/dist/css/bootstrap.css', rel='stylesheet')
+        link(href='styles/style.css', rel='stylesheet')
+        //endbuild
+
+        block head
+        //if lt IE 9
+            script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+            script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+    body(ng-app="pasteyeapp")
+        #wrap
+            include includes/navbar
+            block content
+        #footer
+            .container
+                p.text-muted Made with love by&nbsp;
+                    a(href='http://www.shayanmohanty.com/') @Shayanjm
+                    | .
+        script(src='bower_components/angular/angular.js')
+        script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+
+        //build:js scripts/modules.js
+        script(src='bower_components/lodash/dist/lodash.js')
+        script(src='bower_components/angular-resource/angular-resource.js')
+        script(src='bower_components/angular-cookies/angular-cookies.js')
+        script(src='bower_components/angular-sanitize/angular-sanitize.js')
+        script(src='bower_components/angular-ui-router/release/angular-ui-router.js')
+        script(src='bower_components/restangular/dist/restangular.js')
+        //endbuild
+
+        //build:js({.tmp,app}) scripts/scripts.js
+        script(src='scripts/controllers/app.js')
+        script(src='scripts/services/userService.js')
+        //endbuild
+        script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
+
+        block scripts

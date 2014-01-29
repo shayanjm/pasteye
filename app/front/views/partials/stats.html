@@ -1,0 +1,25 @@
+<div class="page-header">
+    <h3 >Hi there, {{currentUser.username}}. Here are your
+    current stats:</h3>
+</div>
+
+<ul class="list-group">
+    <li class="list-group-item"><span class="label label-default">Total
+    Monitors Triggered</span><span class="badge">{{totalTriggers}}</span></li>
+</ul>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Triggers by Monitor</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="stat in currentStats">
+                <span class="label label-default"> {{stat.name}} </span>
+                <span class="badge"> {{stat.value}} </span>
+            </li>
+        </ul>
+    </div>
+</div>
+

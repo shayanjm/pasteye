@@ -1,0 +1,123 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+#wrap > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.jumbotron {
+    background: url(/images/stars.svg) #225378; /* Old browsers */
+}
+.jumbotron.beta {
+    background: url(/images/stars.svg) #1695A3;
+}
+.jumbotron.beta h1 {
+    color: #F3FFE2;
+}
+.jumbotron.beta p {
+    color: #F3FFE2;
+}
+
+.jumbotron h1 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 5em;
+}
+.jumbotron p {
+    color: #dfdfdf;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+}
+
+.sidebar-offcanvas {
+    padding-top: 4%;
+}
+
+@media only screen and (max-width: 768px) {
+
+   .jumbotron h1 {
+        font-size: 3em;
+   }
+   .jumbotron p {
+        font-size:1.1em;
+   }
+
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media only screen and (max-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    padding-top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+
