@@ -5,7 +5,7 @@ A pastebin monitoring tool. Soon to be: Pastebin Monitoring as a Service
 
 ## Installation
 
-(Requires Grunt[http://gruntjs.com/])
+(Requires [http://gruntjs.com/](Grunt))
 
 1. `git clone` the repo
 
@@ -13,7 +13,7 @@ A pastebin monitoring tool. Soon to be: Pastebin Monitoring as a Service
 
 3. Configure config.js and .env appropriately
 
- 4. `grunt server` to start the server in the development environment
+4. `grunt server` to start the server in the development environment
 
 5. `grunt build` for a production build (will end up in the dist folder)
 
