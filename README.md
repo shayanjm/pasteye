@@ -11,7 +11,7 @@ Another aspect of this is the fact that there is no data as to *who* uses pasteb
 
 ## Installation
 
-(Requires [Grunt](http://gruntjs.com/))
+> *(Requires [Grunt](http://gruntjs.com/))*
 
 1. `git clone` the repo
 
@@ -47,29 +47,99 @@ For every request, API key is passed first. API key ties API actions to user.
 
 ## API Request Structure & Access
 
-GET /api/users {apikey: (apikey)}--> Returns all Users (ADMIN)
+ **All endpoints will be expecting properly formatted JSON.**
+ An example of a properly formatted request is: `curl -X GET -H "Content-Type: application/json" -d '{"apikey": "<someapikey>"}' http://host.com/api/users/3`
 
-GET /api/users/:id {apikey: (apikey)}--> Returns User with specified ID (ADMIN)
+ If entry is appended with *(ADMIN)*, request must be made by an Admin. 
 
-GET /api/users/:id/settings {apikey: (apikey)}--> Returns User Settings with specified ID (ADMIN)
+ If *(USER)*, request can be made by the User for their own account. 
 
-POST /api/users {username: (username), password: (password), userEmail: (userEmail)} --> Creates User with no settings (ALL)
+ If *(ALL)*, anyone can make the request.
 
-POST /api/users {username: (username), password: (password), userEmail: (userEmail), ip: (IP restriction), email: (email restriction), hash: (hash restriction)} --> Creates User with settings ip, email, and hash (ALL)
+#### Returns all Users (ADMIN)
 
-POST /api/users {apikey: (apikey), users: [{username: (username1), password: (password1), userEmail: (userEmail1), ip: (IP restriction1), email: (email restriction1), hash: (hash restriction1)}, {username: (username2)... hash: (hash restriction2)}, ...]} --> Creates users 1-* with allocated settings (ADMIN)
+>GET /api/users 
+```json
+{ "apikey": "(apikey)" }
+```
 
-POST /api/users {apikey: (apikey), users: [{username: (username1), password: (password1), userEmail: (userEmail1)}, {username: (username2)... userEmail: (userEmail2)}, ...]} --> Creates users 1-* with no settings (ADMIN)
 
-PUT /api/users/:id {apikey: (apikey), password: (password), userEmail: (userEmail), ip: (IP restriction), email: (email restriction), hash: (hash restriction)} --> Updates a User (via ID) with the given settings (USER)(ADMIN)
+#### Returns User with specified ID (ADMIN)
 
-DELETE /api/users {apikey: (apikey), username: (username)} --> Deletes a user (USER)(ADMIN)
+>GET /api/users/:id
+ ```json
+ { "apikey": "(apikey)" }
+ ```
 
-DELETE /api/users {apikey: (apikey), id: (id)} --> Deletes a user via ID (USER)(ADMIN)
+#### Returns User Settings with specified ID (ADMIN)
 
-DELETE /api/users {apikey: (apikey), users: [{username: (username)}, {username: (username2)}]} --> Deletes a set of users via username (ADMIN)
+>GET /api/users/:id/settings 
+```json
+{ "apikey": "(apikey)" }
+```
 
-DELETE /api/users {apikey: (apikey), users: [{id: (id)}, {id: (id2)}]} --> Deletes a set of users via ID (ADMIN)
+#### Creates User with no settings (ALL)
+
+>POST /api/users
+```json
+ { "username": "(username)", "password": "(password)", "userEmail": "(userEmail)" }
+ ```
+
+#### Creates User with settings ip, email, and hash (ALL)
+
+>POST /api/users
+```json
+ { "username": "(username)", "password": "(password)", "userEmail": "(userEmail)", "ip": "(IP threshold)", "email": "(Email threshold)", "hash": "(Hash threshold)" }
+ ```
+
+#### Creates users 1-* with allocated settings (ADMIN)
+
+>POST /api/users
+```json
+ { "apikey": "(apikey)", "users": [{"username": "(username1)", "password": "(password1)", "userEmail": "(userEmail1)", "ip": "(IP threshold1)", "email": "(Email threshold1)", "hash": "(Hash threshold1)"}, {"username": "(username2)"... "hash": "(Hash threshold2)"}, ...] } 
+ ```
+
+#### Creates users 1-* with no settings (ADMIN)
+
+>POST /api/users
+```json
+ { "apikey": "(apikey)", "users": [{"username": "(username1)", "password": "(password1)", "userEmail": "(userEmail1)"}, {"username": "(username2)"... "userEmail": "(userEmail2)"}, ...] }
+ ```
+
+#### Updates a User (via ID) with the given settings (USER)(ADMIN)
+
+>PUT /api/users/:id
+```json
+ { "apikey": "(apikey)", "password": "(password)", "userEmail": "(userEmail)", "ip": "(IP threshold)", "email": "(Email threshold)", "hash": "(Hash threshold)" }
+ ```
+
+#### Deletes a user (USER)(ADMIN)
+
+>DELETE /api/users 
+```json
+{ "apikey": "(apikey)", "username": "(username)" }
+```
+
+#### Deletes a user via ID (USER)(ADMIN)
+
+>DELETE /api/users
+```json
+ { "apikey": "(apikey)", "id": "(id)" }
+ ```
+
+#### Deletes a set of users via username (ADMIN)
+
+>DELETE /api/users
+```json
+ { "apikey": "(apikey)", "users": [{"username": "(username)"}, {"username": "(username2)"}] }
+ ```
+
+#### Deletes a set of users via ID (ADMIN)
+
+>DELETE /api/users
+```json
+ { "apikey": "(apikey)", "users": [{"id": "(id)"}, {"id": "(id2)"}] }
+ ```
 
 ## TO DO BEFORE RELEASE
 
@@ -89,7 +159,7 @@ Copyright (c) 2014 Shayan Mohanty
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
+in the Software without threshold, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
