@@ -5,25 +5,21 @@ A pastebin monitoring tool. Soon to be: Pastebin Monitoring as a Service
 
 ## Installation
 
-(Requires Grunt)
+(Requires Grunt[http://gruntjs.com/])
 
-+ `git clone` the repo
+1. `git clone` the repo
 
-+ `npm install .`
+2. `npm install .`
 
-+ `grunt server` to start the server in the development environment
+3. Configure config.js and .env appropriately
 
-+ `grunt build` for a production build (will end up in the dist folder)
+ 4. `grunt server` to start the server in the development environment
 
-+ `grunt test` to run tests
+5. `grunt build` for a production build (will end up in the dist folder)
 
-+ `grunt server:dist` to run server in production environment
+6. `grunt server:dist` to run server in production environment (will automatically re-build and serve from dist)
 
-## Configuration
-
-+ config.js ( secretKey for token generation, DB URIs, host )
-
-+ .env file ( AWS access information )
+7. `grunt test` to run tests
 
 ## API Key Logic
 
