@@ -1,7 +1,13 @@
 pasteye
 =======
 
-A pastebin monitoring tool. Soon to be: Pastebin Monitoring as a Service
+Pastebin Monitoring as a Service
+
+## Why?
+
+Well, why not? It's an interesting side project, and can be rather useful to some people. Great for breach notifications (i.e: realtime notification if a large DB has been pasted to Pastebin), and future versions will have custom filter features which would allow you to monitor for anything (i.e: Your own e-mail, to see if you have been compromised). 
+
+Another aspect of this is the fact that there is no data as to *who* uses pastebin, and how. It would be interesting to analyze the data that surrounds pastebin usage and tangential fields.
 
 ## Installation
 
