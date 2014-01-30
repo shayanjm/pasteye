@@ -5,7 +5,7 @@ A pastebin monitoring tool. Soon to be: Pastebin Monitoring as a Service
 
 ## Installation
 
-(Requires [http://gruntjs.com/](Grunt))
+(Requires [Grunt](http://gruntjs.com/))
 
 1. `git clone` the repo
 
