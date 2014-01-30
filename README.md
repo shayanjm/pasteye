@@ -75,5 +75,7 @@ DELETE /api/users {apikey: (apikey), users: [{id: (id)}, {id: (id2)}]} --> Delet
 
 + Fix tests
 
-+ License
++ ~~License~~
+
++ Proper documentation
 

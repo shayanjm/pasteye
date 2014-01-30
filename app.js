@@ -149,7 +149,7 @@ passport.deserializeUser(function (id, done) {
     });
 });
 
-// Actually executed stuff starts below
+// Begin Execution
 init();
 // development only
 if ('development' === app.get('env') || 'test' === app.get('env')) {
