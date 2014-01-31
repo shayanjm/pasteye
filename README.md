@@ -7,9 +7,9 @@ Pastebin Monitoring as a Service
 
 Well, why not? It's an interesting side project, and can be rather useful to some people. Great for breach notifications (i.e: realtime notification if a large DB has been pasted to Pastebin), and future versions will have custom filter features which would allow you to monitor for anything (i.e: Your own e-mail, to see if you have been compromised). 
 
-Another aspect of this is the fact that there is no data as to *who* uses pastebin, and how. It would be interesting to analyze the data that surrounds pastebin usage and tangential fields.
+Another aspect of this is the fact that there is no data as to *who* uses pastebin, and how. It would be interesting to analyze the data that surrounds pastebin usage and tangential fields. Essentially, I would like to continue moving this project into a larger scope of data analytics. 
 
-## Installation
+## Installation and Usage
 
 > *(Requires [Grunt](http://gruntjs.com/))*
 
@@ -141,15 +141,41 @@ For every request, API key is passed first. API key ties API actions to user.
  { "apikey": "(apikey)", "users": [{"id": "(id)"}, {"id": "(id2)"}] }
  ```
 
-## TO DO BEFORE RELEASE
+## TO DO BEFORE INITIAL RELEASE
 
 + Clean up repo
 
 + Fix tests
 
-+ Proper documentation
++ ~~Proper documentation~~
 
 + ~~License~~
+
+
+## Project Roadmap
+
+#### v0.1.0
+
+> **Initial Release**
+>
+> Feature set: Scraper, master & user threshold filter, RESTful API, User Authen + Authz, Semi-functional user portal
+
+#### v0.2.0
+> Notes:
+>
+> + Index API keys & check Collision upon user generation
+>
+> + Custom user filters + thresholds
+>
+>   + Sanitize RegEx input (for ReDoS)
+>
+>   + Add timeout to regex filtering as a catchall
+>
+> + Add Trending File support based on individual user API access
+>
+> + User's latest triggered pastes
+> 
+> + Triggered paste collection & archiving
 
 ## LICENSE
 
