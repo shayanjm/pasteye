@@ -147,6 +147,8 @@ For every request, API key is passed first. API key ties API actions to user.
 
 + Fix tests
 
++ Continuous Integration
+
 + ~~Proper documentation~~
 
 + ~~License~~
@@ -176,6 +178,10 @@ For every request, API key is passed first. API key ties API actions to user.
 > + User's latest triggered pastes
 > 
 > + Triggered paste collection & archiving
+
+## Contributing
+
+As of v0.1.0 - this project is in fairly decent shape & stable. We could, however, use some help implementing proper frontend tests and new features. If you would like to help contribute a feature, take a look at the project roadmap and milestones in github issues. Fork, build your features & tests, and then issue a pull request. We use [Git flow](https://github.com/nvie/gitflow) to keep our repo tidy.
 
 ## LICENSE
 
