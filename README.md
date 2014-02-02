@@ -1,7 +1,7 @@
 pasteye
 =======
 
-Pastebin Monitoring as a Service
+[Pastebin](http://www.pastebin.com) Monitoring as a Service
 
 ## Why?
 
@@ -25,7 +25,7 @@ Another aspect of this is the fact that there is no data as to *who* uses pasteb
 
 6. `grunt server:dist` to run server in production environment (will automatically re-build and serve from dist)
 
-7. `grunt test` to run tests
+7. `grunt test` OR `npm test` to run tests
 
 ## API Key Logic
 

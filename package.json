@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "grunt test"
   },
   "engine": "node 0.10.7",
   "dependencies": {
