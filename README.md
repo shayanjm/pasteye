@@ -154,11 +154,11 @@ For every request, API key is passed first. API key ties API actions to user.
 
 ## Project Roadmap
 
-#### Latest: v0.1.0
+#### Latest: v0.1.1
 
-> **Initial Release**
+> Changes from v0.1.0:
 >
-> Feature set: Scraper, master & user threshold filters, RESTful API, User Authen + Authz, Semi-functional user portal
+> Minimum-threshold hotfix in #1
 
 #### v0.2.0
 > Notes:
@@ -176,6 +176,12 @@ For every request, API key is passed first. API key ties API actions to user.
 > + User's latest triggered pastes
 > 
 > + Triggered paste collection & archiving
+
+#### Latest: v0.1.0
+
+> **Initial Release**
+>
+> Feature set: Scraper, master & user threshold filters, RESTful API, User Authen + Authz, Semi-functional user portal
 
 ## Contributing
 
