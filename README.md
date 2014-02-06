@@ -3,6 +3,8 @@ pasteye
 
 [Pastebin](http://www.pastebin.com) Monitoring as a Service
 
+Click [here](http://pasteyebeta.herokuapp.com) if you would like to try it out without deploying it yourself.
+
 ## Why?
 
 Well, why not? It's an interesting side project, and can be rather useful to some people. Great for breach notifications (i.e: realtime notification if a large DB has been pasted to Pastebin), and future versions will have custom filter features which would allow you to monitor for anything (i.e: Your own e-mail, to see if you have been compromised). 
