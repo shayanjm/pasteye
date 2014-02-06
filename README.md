@@ -154,7 +154,7 @@ For every request, API key is passed first. API key ties API actions to user.
 
 ## Project Roadmap
 
-#### v0.1.0
+#### Latest: v0.1.0
 
 > **Initial Release**
 >
