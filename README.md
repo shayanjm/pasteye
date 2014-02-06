@@ -141,11 +141,9 @@ For every request, API key is passed first. API key ties API actions to user.
  { "apikey": "(apikey)", "users": [{"id": "(id)"}, {"id": "(id2)"}] }
  ```
 
-## TO DO BEFORE INITIAL RELEASE
+## Still To do
 
 + Clean up repo
-
-+ Fix tests
 
 + Continuous Integration
 
@@ -160,7 +158,7 @@ For every request, API key is passed first. API key ties API actions to user.
 
 > **Initial Release**
 >
-> Feature set: Scraper, master & user threshold filter, RESTful API, User Authen + Authz, Semi-functional user portal
+> Feature set: Scraper, master & user threshold filters, RESTful API, User Authen + Authz, Semi-functional user portal
 
 #### v0.2.0
 > Notes:
