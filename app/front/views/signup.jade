@@ -35,18 +35,20 @@ block content
                 .panel-heading
                     h3 Monitor Settings
                 .panel-body
+                    #infoMessage.alert.alert-info
+                        p A threshold value is the number of 'things' a paste should have before triggering an e-mail notification. If a paste has x 'things' or more in it, it will be sent to you via e-mail. The higher the number, the fewer the e-mails for a specific 'thing'.
                     .form-group
-                        label(for="ipDensity").control-label.col-xs-4.col-md-2 IP Monitor Density
+                        label(for="ipDensity").control-label.col-xs-4.col-md-2 IP Monitor Threshold
                         .col-xs-8.col-md-2
-                            input(type="number", name="ipDensity", placeholder="Enter a density" min=30 required).form-control#ipDensity
+                            input(type="number", name="ipDensity", placeholder="Enter a threshold" min=30 required).form-control#ipDensity
                     .form-group
-                        label(for="emailDensity").control-label.col-xs-4.col-md-2 Email Monitor Density
+                        label(for="emailDensity").control-label.col-xs-4.col-md-2 Email Monitor Threshold
                         .col-xs-8.col-md-2
-                            input(type="number", name="emailDensity", placeholder="Enter a density" min=30 required).form-control#emailDensity
+                            input(type="number", name="emailDensity", placeholder="Enter a threshold" min=30 required).form-control#emailDensity
                     .form-group
-                        label(for="hashDensity").control-label.col-xs-4.col-md-2 Hash Monitor Density
+                        label(for="hashDensity").control-label.col-xs-4.col-md-2 Hash Monitor Threshold
                         .col-xs-8.col-md-2
-                            input(type="number", name="hashDensity", placeholder="Enter a density" min=30 required).form-control#hashDensity
+                            input(type="number", name="hashDensity", placeholder="Enter a threshold" min=30 required).form-control#hashDensity
 
             button(type="submit" class="btn btn-default").center-block Submit
         h3

@@ -156,9 +156,11 @@ For every request, API key is passed first. API key ties API actions to user.
 
 ## Project Roadmap
 
-#### Latest: v0.1.1
+#### Latest: v0.1.2
 
 > Changes from v0.1.0:
+>
+> Wording clarification hotfix in #2
 >
 > Minimum-threshold hotfix in #1
 
@@ -179,7 +181,13 @@ For every request, API key is passed first. API key ties API actions to user.
 > 
 > + Triggered paste collection & archiving
 
-#### Latest: v0.1.0
+#### v0.1.1
+
+> Changes from v0.1.0:
+>
+> Minimum-threshold hotfix in #1
+
+#### v0.1.0
 
 > **Initial Release**
 >
@@ -188,28 +196,3 @@ For every request, API key is passed first. API key ties API actions to user.
 ## Contributing
 
 As of v0.1.0 - this project is in fairly decent shape & stable. We could, however, use some help implementing proper frontend tests and new features. If you would like to help contribute a feature, take a look at the project roadmap and milestones in github issues. Fork, build your features & tests, and then issue a pull request. We use [Git flow](https://github.com/nvie/gitflow) to keep our repo tidy.
-
-## LICENSE
-
-The MIT License (MIT)
-
-Copyright (c) 2014 Shayan Mohanty
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
