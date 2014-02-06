@@ -1,15 +1,15 @@
 pasteye
 =======
 
-Pastebin Monitoring as a Service
+[Pastebin](http://www.pastebin.com) Monitoring as a Service
 
 ## Why?
 
 Well, why not? It's an interesting side project, and can be rather useful to some people. Great for breach notifications (i.e: realtime notification if a large DB has been pasted to Pastebin), and future versions will have custom filter features which would allow you to monitor for anything (i.e: Your own e-mail, to see if you have been compromised). 
 
-Another aspect of this is the fact that there is no data as to *who* uses pastebin, and how. It would be interesting to analyze the data that surrounds pastebin usage and tangential fields.
+Another aspect of this is the fact that there is no data as to *who* uses pastebin, and how. It would be interesting to analyze the data that surrounds pastebin usage and tangential fields. Essentially, I would like to continue moving this project into a larger scope of data analytics. 
 
-## Installation
+## Installation and Usage
 
 > *(Requires [Grunt](http://gruntjs.com/))*
 
@@ -25,7 +25,7 @@ Another aspect of this is the fact that there is no data as to *who* uses pasteb
 
 6. `grunt server:dist` to run server in production environment (will automatically re-build and serve from dist)
 
-7. `grunt test` to run tests
+7. `grunt test` OR `npm test` to run tests
 
 ## API Key Logic
 
@@ -141,15 +141,45 @@ For every request, API key is passed first. API key ties API actions to user.
  { "apikey": "(apikey)", "users": [{"id": "(id)"}, {"id": "(id2)"}] }
  ```
 
-## TO DO BEFORE RELEASE
+## Still To do
 
 + Clean up repo
 
-+ Fix tests
++ Continuous Integration
 
-+ Proper documentation
++ ~~Proper documentation~~
 
 + ~~License~~
+
+
+## Project Roadmap
+
+#### Latest: v0.1.0
+
+> **Initial Release**
+>
+> Feature set: Scraper, master & user threshold filters, RESTful API, User Authen + Authz, Semi-functional user portal
+
+#### v0.2.0
+> Notes:
+>
+> + Index API keys & check Collision upon user generation
+>
+> + Custom user filters + thresholds
+>
+>   + Sanitize RegEx input (for ReDoS)
+>
+>   + Add timeout to regex filtering as a catchall
+>
+> + Add Trending File support based on individual user API access
+>
+> + User's latest triggered pastes
+> 
+> + Triggered paste collection & archiving
+
+## Contributing
+
+As of v0.1.0 - this project is in fairly decent shape & stable. We could, however, use some help implementing proper frontend tests and new features. If you would like to help contribute a feature, take a look at the project roadmap and milestones in github issues. Fork, build your features & tests, and then issue a pull request. We use [Git flow](https://github.com/nvie/gitflow) to keep our repo tidy.
 
 ## LICENSE
 
