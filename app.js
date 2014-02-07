@@ -395,7 +395,7 @@ app.post('/verifyEmail', function (req, res) {
 app.post('/forgotPassword', function (req, res) {
     var date = new Date();
     User.find({ userEmail: req.body.userEmail }, function (err, user) {
-            if (err) {
+            if (err || user.length  === 0) {
                 res.send(err, 500);
             }
             else {
