@@ -22,8 +22,8 @@ var userSettings;
 var User;
 var app = express();
 
-var global_blacklist = require('./config/blacklist');
-var global_whitelist = require('./config/whitelist');
+var global_blacklist = require('./configure/blacklist');
+var global_whitelist = require('./configure/whitelist');
 
 // Grabs user settings explicitly in order to quickly update
 var getUserSettings = function () {
