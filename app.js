@@ -22,6 +22,9 @@ var userSettings;
 var User;
 var app = express();
 
+var global_blacklist = require('./config/blacklist');
+var global_whitelist = require('./config/whitelist');
+
 // Grabs user settings explicitly in order to quickly update
 var getUserSettings = function () {
     db.driver.execQuery('SELECT * FROM users_settings', function (err, data) {
@@ -62,14 +65,7 @@ var parseLatestUrls =  function (body, cb) {
 
 // Verify that the body of each post does not contain anything currently blacklisted
 var checkBlacklist = function (body, url, cb) {
-    var blacklist = {
-        debug: {
-            reg: /\bdebug\b/gi,
-        },
-        javalang: {
-            reg: /\bjava.lang\b/gi,
-        }
-    },
+    var blacklist = global_blacklist,
     isntBlacklisted = true;
 
     for (var filter in blacklist) {
@@ -88,20 +84,7 @@ var checkBlacklist = function (body, url, cb) {
 
 // If the body passed the blacklist filter, we then figure out what it contains and if it is of any interest
 var masterFilter = function (body, url, cb) {
-    var filters = {
-            email: {
-                reg: /([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})/g,
-                count: 0
-            },
-            ip: {
-                reg: /(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/g,
-                count: 0
-            },
-            hash: {
-                reg: /[0-9a-f]{32}(?:[0-9a-f]{8})?/g,
-                count: 0
-            }
-        };
+    var filters = global_whitelist;
 
     for (var filter in filters) {
         if (filters[filter].reg.test(body)) {
